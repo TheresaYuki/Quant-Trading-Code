@@ -1,18 +1,17 @@
 import pandas as pd
 import numpy as np
 
-from s2_factors import MA, trend
-
 
 def dual_moving_average(MA_short: pd.Series, MA_long: pd.Series) -> pd.Series:
     """
     根据短均线和长均线生成双均线仓位信号。
+    特别注意:这里传入的MA不一定是SMA的结果
     输入:
         MA_short (pd.Series): 短期均线序列 (如 MA10)
         MA_long (pd.Series): 长期均线序列 (如 MA20)
         
     返回:
-        pd.Series: 仓位信号序列。1.0 代表满仓（持有），0.0 代表空仓。
+        pd.Series: 仓位信号序列。1.0 代表满仓(持有),0.0 代表空仓。
     """
 
     # 1. 数据校验（防呆）

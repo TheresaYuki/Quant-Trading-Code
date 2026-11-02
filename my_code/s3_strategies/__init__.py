@@ -1,0 +1,1 @@
+from .trend_following import dual_moving_average
