@@ -1,0 +1,2 @@
+trend_following 为单边市的策略
+mean_reversion 为震荡市的策略
