@@ -1,0 +1,6 @@
+MA.py 计算各种MA数据
+trend.py 动量与趋势因子
+volatility.py 波动率因子
+pair.py 对2支股票进行比对
+volume.py 成交量与流动性因子
+oscillator.py 超买超卖因子
