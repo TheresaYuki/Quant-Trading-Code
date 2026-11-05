@@ -4,7 +4,6 @@ import numpy as np
 from . import MA
 
 
-# 该代码最后返回的数值设置可能存在某些问题
 def cal_rsi(df: pd.DataFrame, window: int = 14, column: str = "close") -> pd.Series:
     """计算RSI指标"""
 
@@ -19,8 +18,13 @@ def cal_rsi(df: pd.DataFrame, window: int = 14, column: str = "close") -> pd.Ser
     rs = avg_gain / avg_loss.replace(0, np.nan)
     rsi = 100 - (100 / (1 + rs))
 
-    # 特别注意：这个50可能在某些行情会导致出现极端错误
-    return rsi.fillna(50)
+    # 针对连续暴涨导致 avg_loss=0 引起的除零（算出inf或nan）
+    rsi = rsi.where(avg_loss != 0, 100)
+    
+    # 针对完全没波动的死水（涨跌都是0），填 50 才合理
+    rsi = rsi.where((avg_gain == 0) & (avg_loss == 0), 50)
+    
+    return rsi
 
 
 def cal_kdj(df: pd.DataFrame, window: int = 9, m1: int = 3, m2: int = 3) -> pd.DataFrame:

@@ -70,9 +70,9 @@ def grid_signal(df: pd.DataFrame, gap: float, baseline: float, price_col: str = 
     return signals
 
 
-def pair_signal(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
-    """
-    根据配对交易判断交易信号
-    输入2支股票的原数据表格
-    输出1个由(-1, 0, 1)构成的二维交易信号表格,各自对应2支股票(-1做空, 0空仓, 1做多)
-    """
+# def pair_signal(df1: pd.DataFrame, df2: pd.DataFrame, z_score: float) -> pd.DataFrame:
+#     """
+#     根据配对交易判断交易信号
+#     输入2支股票的原数据表格
+#     输出1个由(-1, 0, 1)构成的二维交易信号表格,各自对应2支股票(-1做空, 0空仓, 1做多)
+#     """

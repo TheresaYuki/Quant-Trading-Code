@@ -10,5 +10,6 @@ from .s2_factors import cal_macd, cal_roc, cal_adx, cal_bias, cal_aroon
 from .s2_factors import cal_atr, cal_bollinger_bands, cal_hv
 from .s2_factors import cal_rsi, cal_kdj, cal_cci
 from .s2_factors import cal_vma, cal_vol_ratio, cal_turnover, cal_obv, cal_mfi, cal_pv_corr, cal_amihud
+from .s2_factors import cal_zscore, cal_ols, cal_pearson
 
 from .s3_strategies import dual_moving_average
